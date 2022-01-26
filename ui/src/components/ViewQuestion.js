@@ -10,7 +10,7 @@ import UnansweredQuestion from './UnansweredQuestion';
 
 const ViewQuestion = () => {
     let { id } = useParams();
-    const question = useSelector(state => state.questions[id])
+    const question = useSelector(state => state.questions && state.questions[id])
     const author = useSelector(state => {
         if (question) {
             return state.users[question.author]

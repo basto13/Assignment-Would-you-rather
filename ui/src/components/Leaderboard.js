@@ -27,7 +27,7 @@ class Leaderboard extends React.Component {
 }
 
 function mapStateToProps({ users, authedUser }) {
-    const results = Object.values(users)
+    const results = Object.values(users || {})
         .map(user => ({
             id: user.id,
             name: user.name,

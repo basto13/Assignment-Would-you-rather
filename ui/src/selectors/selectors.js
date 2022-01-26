@@ -1,4 +1,10 @@
 function questionsListSelector({ authedUser, users, questions }) {
+    if (!authedUser || !users || !questions) {
+        return {
+            answeredQuestions: [],
+            unansweredQuestions: []
+        }
+    }
     const answeredIdList = Object.keys(users[authedUser.id].answers)
     const q = Object.values(questions);
     const answeredQuestions = q

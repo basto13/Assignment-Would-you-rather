@@ -4,7 +4,7 @@ import {
     ADD_NEW_QUESTION_TO_USER,
 } from "../actions/users";
 
-export default function usersReducer(state = {}, action) {
+export default function usersReducer(state = null, action) {
     switch (action.type) {
         case RECEIVE_USERS:
             return {

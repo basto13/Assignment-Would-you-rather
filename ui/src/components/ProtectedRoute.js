@@ -5,8 +5,9 @@ import { Component } from 'react';
 
 
 const ProtectedRoute = (props) => {
-    const { children, authedUser } = props;
     const location = useLocation()
+    const { children, authedUser } = props;
+    console.log(authedUser)
 
     return !!authedUser ? children : <Navigate to="/login" state={{from: location}} />;
 }

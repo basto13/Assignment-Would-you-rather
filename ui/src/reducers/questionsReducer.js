@@ -4,7 +4,7 @@ import {
     SAVE_NEW_QUESTION
 } from "../actions/questions";
 
-export default function questions(state = {}, action) {
+export default function questions(state = null, action) {
     switch (action.type) {
         case RECEIVE_QUESTIONS:
             return {

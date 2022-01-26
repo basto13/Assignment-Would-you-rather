@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import LoginPage from './LoginPage';
 import HomePage from './HomePage';
@@ -31,7 +31,8 @@ class App extends React.Component {
               <Route path='/leaderboard' element={<ProtectedRoute><Leaderboard/></ProtectedRoute>}/>
 
               <Route path="/questions/:id" element={<ProtectedRoute><ViewQuestion /></ProtectedRoute>} />
-              <Route path="*" element={<ErrorPage/>}/>
+              <Route path="/errorpage" element={<ErrorPage />}/>
+              <Route path="*" element={<Navigate to="/"/>}/>
 
             </Routes>
           </Fragment>

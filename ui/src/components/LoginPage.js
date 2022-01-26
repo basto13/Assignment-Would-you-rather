@@ -17,7 +17,7 @@ const LoginPage = (props) => {
     const users = props.users
 
     if (redirect) {
-        if (location.state?.from) {
+        if (location.state?.from !== '') {
             return <Navigate to={location.state?.from} />    
         }
         return <Navigate to='/' />
@@ -38,7 +38,7 @@ const LoginPage = (props) => {
 }
 
 function mapStateToProps({ users }) {
-    return { users: Object.values(users) }
+    return { users: Object.values(users || {}) }
 }
 
 export default connect(mapStateToProps)(LoginPage)
