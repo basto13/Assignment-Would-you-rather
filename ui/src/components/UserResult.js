@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class UserResult extends Component {
 
     render() {
-        const { id, name, answered, addedQuestions, total, avatarURL } = this.props.user
+        const { name, answered, addedQuestions, total, avatarURL } = this.props.user
         console.log(this.props.id)
 
 

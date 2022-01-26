@@ -8,7 +8,7 @@ const PreviewQuestion = (props) => {
     const navigate = useNavigate();
 
     const selectQuestion = (id) => {
-        navigate(`/question/${id}`);
+        navigate(`/questions/${id}`);
     }
 
     const { question, usersAvatar } = props

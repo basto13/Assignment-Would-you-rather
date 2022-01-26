@@ -11,9 +11,14 @@ import UnansweredQuestion from './UnansweredQuestion';
 const ViewQuestion = () => {
     let { id } = useParams();
     const question = useSelector(state => state.questions[id])
-    const author = useSelector(state => state.users[question.author])
+    const author = useSelector(state => {
+        if (question) {
+            return state.users[question.author]
+        } else {
+            return undefined
+        }
+    })
     const { answeredQuestions } = useSelector(questionsListSelector)
-    console.log(question);
     if (!question) {
         return <Navigate to="/errorpage" />
     }

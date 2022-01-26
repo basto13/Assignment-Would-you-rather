@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -30,8 +30,8 @@ class App extends React.Component {
               <Route path='/add' element={<ProtectedRoute><NewQuestion /></ProtectedRoute>} />
               <Route path='/leaderboard' element={<ProtectedRoute><Leaderboard/></ProtectedRoute>}/>
 
-              <Route path="/question/:id" element={<ProtectedRoute><ViewQuestion /></ProtectedRoute>} />
-              <Route path="/errorpage" element={<ErrorPage/>}/>
+              <Route path="/questions/:id" element={<ProtectedRoute><ViewQuestion /></ProtectedRoute>} />
+              <Route path="*" element={<ErrorPage/>}/>
 
             </Routes>
           </Fragment>

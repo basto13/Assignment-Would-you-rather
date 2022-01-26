@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Navigate } from 'react-router';
 import { connect } from 'react-redux';
 
@@ -15,7 +15,6 @@ class NewQuestion extends React.Component {
   }
 
   handleChange(e) {
-    const value = e.target.value
     this.setState({
       ...this.state,
       [e.target.name]: e.target.value

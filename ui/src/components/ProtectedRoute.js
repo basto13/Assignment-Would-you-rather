@@ -1,18 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Navigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 import { Component } from 'react';
 
 
-class ProtectedRoute extends Component {
-    render() {
-        const { children, authedUser } = this.props;
+const ProtectedRoute = (props) => {
+    const { children, authedUser } = props;
+    const location = useLocation()
 
-        this.children = children;
-        this.isAuthenticated = !!authedUser;
-
-        return this.isAuthenticated ? this.children : <Navigate to="/login" />;
-    }
+    return !!authedUser ? children : <Navigate to="/login" state={{from: location}} />;
 }
 
 
